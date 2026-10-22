@@ -13,6 +13,7 @@
   <style>
     /* Token warna disamakan dengan website utama SMADORS */
     :root {
+      --blue-100: #e3e9f0;
       --blue-150: #c0d7fc;
       --blue-200: #becbde;
       --blue-300: #89a0c4;
@@ -143,14 +144,21 @@
       font-weight: 600;
       font-size: var(--text-base);
       text-align: left;
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+      -webkit-tap-highlight-color: transparent;
     }
-    .link:hover, .link:focus-visible {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-brand);
-      outline: none;
+    /* Hover hanya untuk perangkat ber-pointer; di HP :hover "nempel" setelah tombol di-tap */
+    @media (hover: hover) {
+      .link:hover { transform: translateY(-2px); box-shadow: var(--shadow-brand); }
     }
-    .link:focus-visible { box-shadow: 0 0 0 3px var(--blue-350); }
+    .link:focus-visible { transform: translateY(-2px); outline: none; box-shadow: 0 0 0 3px var(--blue-350); }
+    /* State ditekan: kartu sedikit mengecil, bayangan merapat, latar jadi biru muda brand */
+    .link:active {
+      transform: scale(0.98);
+      box-shadow: 0 1px 2px color-mix(in srgb, var(--gray-700) 20%, transparent);
+      background-color: var(--blue-100);
+      transition-duration: 0.06s;
+    }
 
     .link small { display: block; font-weight: 500; font-size: var(--text-sm); color: var(--color-text); }
     .link .label { flex: 1; }
