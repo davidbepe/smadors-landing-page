@@ -1,0 +1,10 @@
+// Situs statis di Cloudflare Workers (static assets), tanpa kode server.
+// "name" harus sama dengan nama Worker di dashboard Cloudflare.
+{
+  "name": "smadors-landing-page",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    // Folder docs/ juga dipakai GitHub Pages, jadi kedua hosting menyajikan file yang sama
+    "directory": "./docs"
+  }
+}
