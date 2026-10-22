@@ -4,7 +4,7 @@
   "name": "smadors-landing-page",
   "compatibility_date": "2026-10-01",
   "assets": {
-    // Folder docs/ juga dipakai GitHub Pages, jadi kedua hosting menyajikan file yang sama
+    // Hanya isi docs/ yang di-upload, jadi .git, README, dan file konfigurasi tidak ikut publik
     "directory": "./docs"
   }
 }

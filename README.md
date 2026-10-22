@@ -2,7 +2,7 @@
 
 Halaman "link-in-bio" SMA Dr. Soetomo Surabaya untuk informasi SPMB: kontak WhatsApp, kanal resmi, dan lokasi sekolah.
 
-Situs statis di folder `docs/` tanpa build step, dipakai oleh GitHub Pages dan Cloudflare (lihat `wrangler.jsonc`). Warna dan font mengikuti design token website utama SMADORS.
+Situs statis di folder `docs/` tanpa build step, di-hosting di Cloudflare Workers milik sekolah (lihat `wrangler.jsonc`). Setiap push ke `main` otomatis di-build dan di-deploy oleh Cloudflare. Warna dan font mengikuti design token website utama SMADORS.
 
 ## Menjalankan secara lokal
 
