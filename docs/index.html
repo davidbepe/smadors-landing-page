@@ -6,7 +6,7 @@
   <title>SMA Dr. Soetomo Surabaya — Info SPMB</title>
   <meta name="description" content="Kanal resmi SMA Dr. Soetomo Surabaya (SMADORS). Hubungi tim kami untuk informasi seputar SPMB.">
   <meta name="theme-color" content="#0b2959">
-  <link rel="icon" href="assets/logo.png">
+  <link rel="icon" href="assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -66,13 +66,20 @@
     /* Foto gedung sekolah ditutup gradasi gelap khas website (--gradient-dark).
        Titik paling terang ada di bawah (area kartu putih). 76% adalah lapisan tertipis yang menjaga
        kontras teks putih >= 4.5 di seluruh layar, di posisi scroll mana pun. */
+    /* Tinggi dikunci ke 100lvh (layar saat address bar tersembunyi), bukan inset: 0.
+       Dengan inset: 0, tinggi .bg ikut berubah saat address bar HP muncul/hilang ketika
+       scroll, sehingga foto "cover" dihitung ulang dan terlihat zoom. */
     .bg {
       position: fixed;
-      inset: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      height: 100lvh;
       z-index: -1;
       background:
         radial-gradient(ellipse 84% 120% at 50% 75%, color-mix(in srgb, var(--blue-500) 76%, transparent), color-mix(in srgb, var(--blue-800) 92%, transparent)),
-        url("assets/gedung.jpg") center / cover no-repeat;
+        url("assets/gedung.webp") center / cover no-repeat;
     }
 
     main {
@@ -169,7 +176,7 @@
       position: relative;
       display: block;
       height: 180px;
-      background: #f2efe9 url("assets/map.png") center / cover no-repeat;
+      background: #f2efe9 url("assets/map.webp") center / cover no-repeat;
     }
     .pin {
       position: absolute;
@@ -235,7 +242,7 @@
   </svg>
 
   <main>
-    <div class="logo"><img src="assets/logo.png" alt="Logo SMA Dr. Soetomo"></div>
+    <div class="logo"><img src="assets/logo.webp" alt="Logo SMA Dr. Soetomo"></div>
     <p class="school">SMA Dr. Soetomo</p>
     <p class="city">Surabaya</p>
 
@@ -299,7 +306,7 @@
 
     <p class="group-label">Lokasi</p>
     <a class="link map-card" href="https://www.google.com/maps/place/SMA+Dr.+SOETOMO/@-7.2988738,112.7615853,17z/data=!3m1!4b1!4m6!3m5!1s0x2dd7fa5323d77ec9:0x9ffc843d13c8b25!8m2!3d-7.2988738!4d112.7641602" target="_blank" rel="noopener">
-          <!-- assets/map.png berpusat tepat di koordinat sekolah, jadi pin cukup di tengah -->
+          <!-- assets/map.webp berpusat tepat di koordinat sekolah, jadi pin cukup di tengah -->
           <span class="map" role="img" aria-label="Peta lokasi SMA Dr. Soetomo">
             <svg class="pin" viewBox="0 0 24 32"><path d="M12 0C5.4 0 0 5.3 0 11.9 0 20.8 12 32 12 32s12-11.2 12-20.1C24 5.3 18.6 0 12 0z" fill="#1d4991"/><circle cx="12" cy="12" r="4.5" fill="#ffffff"/></svg>
             <span class="osm">© OpenStreetMap</span>

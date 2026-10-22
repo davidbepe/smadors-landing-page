@@ -15,9 +15,9 @@ Lalu buka http://localhost:5173.
 ## Struktur
 
 - `docs/index.html` — halaman, termasuk CSS
-- `docs/assets/logo.png` — logo sekolah
-- `docs/assets/gedung.jpg` — foto gedung untuk latar
-- `docs/assets/map.png` — pratinjau peta statis dari OpenStreetMap (atribusi "© OpenStreetMap" wajib tetap tampil)
+- `docs/assets/logo.webp` — logo sekolah; `docs/assets/favicon.png` — ikon tab browser
+- `docs/assets/gedung.webp` — foto gedung untuk latar
+- `docs/assets/map.webp` — pratinjau peta statis dari OpenStreetMap (atribusi "© OpenStreetMap" wajib tetap tampil)
 - `wrangler.jsonc` — konfigurasi Cloudflare Workers (static assets dari `docs/`)
 
 ## Design token
