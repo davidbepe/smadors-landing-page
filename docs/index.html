@@ -221,21 +221,11 @@
     }
     footer .copy { display: block; margin-top: var(--space-2); font-style: normal; letter-spacing: 0.04em; text-transform: none; font-weight: 400; }
 
-    /* Animasi muncul halus saat halaman dibuka: fade + naik 8px, berurutan 50ms per elemen.
+    /* Animasi muncul halus saat halaman dibuka: seluruh konten fade + naik 8px bersamaan.
        Opacity 0 hanya ada di keyframe, jadi kalau animasi dimatikan (reduced motion) konten tetap tampil.
-       Fill mode backwards (bukan both) supaya transform animasi tidak menimpa efek hover pada kartu. */
+       Fill mode backwards (bukan both) supaya transform animasi tidak tertinggal setelah selesai. */
     @keyframes appear { from { opacity: 0; transform: translateY(8px); } }
-    main > * { animation: appear 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; animation-delay: calc(var(--i, 0) * 50ms); }
-    main > :nth-child(2) { --i: 1; }
-    main > :nth-child(3) { --i: 2; }
-    main > :nth-child(4) { --i: 3; }
-    main > :nth-child(5) { --i: 4; }
-    main > :nth-child(6) { --i: 5; }
-    main > :nth-child(7) { --i: 6; }
-    main > :nth-child(8) { --i: 7; }
-    main > :nth-child(9) { --i: 8; }
-    main > :nth-child(10) { --i: 9; }
-    main > :nth-child(n+11) { --i: 10; }
+    main { animation: appear 1s ease-out backwards; }
     @media (prefers-reduced-motion: reduce) {
       *, *::before { animation: none !important; transition: none !important; }
     }
